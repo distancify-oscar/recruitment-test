@@ -6,12 +6,36 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <style>
-    h1 {
-      color: red;
-    }
   </style>
+  <script src="https://unpkg.com/vue@3"></script>
+  <script>
+     Vue.createApp({
+    data() {
+      return {
+        count: 0,
+        items: [{
+          caption: 'Simple',
+          nr: 1
+        }]
+      }
+    }
+  }).mount('#app')
+  </script>
+  
 </head>
 <body>
-  <h1>HELLO WORLD!</h1>
+  <div id="app">
+    <ul class="listing">
+       <li v-for="item in items" 
+           :key="item.caption"
+           :class="['listing__item', { 'listing__item--large' : item.nr > 3 }]" 
+           @click="increment(item.nr)"
+          > 
+         {{ item.caption }} (+ {{ item.nr }})
+      </li>
+    </ul>
+    
+    <span class="count"> Current count: {{ count }} </span>
+  </div>
 </body>
 </html>
