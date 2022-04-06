@@ -6,6 +6,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <style>
+    .listing__item {
+       cursor: pointer;
+       padding: 5px;
+    }
+    
+    .listing__item--large {
+       font-size: 2em;
+    }
   </style>
   <script src="https://unpkg.com/vue@3"></script>
 </head>
@@ -29,11 +37,26 @@
       data() {
         return {
           count: 0,
-          items: [{
-            caption: 'Simple',
-            nr: 1
-          }]
+          items: [
+            {
+              caption: 'Simple',
+              nr: 1
+            },
+            {
+              caption: 'Double',
+              nr: 2
+            },          
+            {
+              caption: 'Quadruple',
+              nr: 4
+            }
+          ]
         }
+      },
+      methods: {
+         increment(nr) {
+            this.count += nr;
+         }
       }
   }).mount('#app')
   </script>
