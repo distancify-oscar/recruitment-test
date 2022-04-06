@@ -8,20 +8,6 @@
   <style>
   </style>
   <script src="https://unpkg.com/vue@3"></script>
-  <script>
-     Vue.createApp({
-    data() {
-      return {
-        count: 0,
-        items: [{
-          caption: 'Simple',
-          nr: 1
-        }]
-      }
-    }
-  }).mount('#app')
-  </script>
-  
 </head>
 <body>
   <div id="app">
@@ -37,5 +23,19 @@
     
     <span class="count"> Current count: {{ count }} </span>
   </div>
+  
+  <script>
+     Vue.createApp({
+      data() {
+        return {
+          count: 0,
+          items: [{
+            caption: 'Simple',
+            nr: 1
+          }]
+        }
+      }
+  }).mount('#app')
+  </script>
 </body>
 </html>
